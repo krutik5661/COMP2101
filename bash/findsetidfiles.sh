@@ -15,4 +15,5 @@ find / -type f -executable -perm -4000 -ls 2>/dev/null | sort -k 3
 echo "Setgid files:"
 echo "(..)(..)(..)"
 find / -type f -executable -perm -2000 -ls 2>/dev/null | sort -k 3
-find / -tpye f -print0 2>/dev/null | xargs -0 du -h | sort -rh | head -n 10
+echo"10 files"
+find / -type f -print0 2>/dev/null | xargs -0 du -h | sort -rh | head -n 10
