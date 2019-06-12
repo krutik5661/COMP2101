@@ -33,7 +33,6 @@
 #   interface_name=$(ip a |awk '/: e/{gsub(/:/,"");print $2}')
 
 #Variables
-#========================
 Variable=$(cat <<EOF
 Hostname        : $(hostname)
 LAN Address     : $(ip a s "$(ip a |awk '/: e/{gsub(/:/,"");print $2}')"|awk '/inet /{gsub(/\/.*/,"");print $2}')
@@ -46,11 +45,9 @@ Network Address : $(ip route get 1.2.3.4 | awk '{print $7}')
 Network Hostname: $(getent hosts "$(ip route get 1.2.3.4 | awk '{print $7}')")
 EOF
 )
-#======================================
+
 
 #Output
-#===================
 cat <<EOF
 $Variable
 EOF
-#========================

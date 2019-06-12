@@ -11,31 +11,28 @@
 
 #Varaiables and data
 #=======================
-#firstnum=5
-#secondnum=2
-read -p "Tell me a number: " firstnum
-read -p "Tell me another number: " secondnum
-#========================
+read -p "Tell me a number: " first
+read -p "Tell me another number: " second
+
 
 #arithmetic
 #============
-sum=$((firstnum + secondnum))
-diff=$((firstnum - secondnum))
-multi=$((firstnum * secondnum))
-dividend=$((firstnum / secondnum))
-modul=$((firstnum % secondnum))
-fpdividend=$(awk "BEGIN{printf \"%.2f\", $firstnum/$secondnum}")
-power=$((firstnum ** secondnum))
-#===============
+sum=$((first + second))
+diff=$((first - second))
+multi=$((first * second))
+dividend=$((first / second))
+modul=$((first % second))
+fpdividend=$(awk "BEGIN{printf \"%.2f\", $first/$second}")
+power=$((first ** second))
+
 
 #Report
-#=============
+
 cat <<EOF
-$firstnum plus $secondnum is $sum
-$firstnum minus $secondnum is $diff
-$firstnum multiplication $secondnum is $multi
-$firstnum divided by $secondnum is $dividend with a remainder of $modul
+$first plus $second is $sum
+$first minus $second is $diff
+$first multiplication $second is $multi
+$first divided by $second is $dividend with a remainder of $modul
   - More precisely, it is $fpdividend
-$firstnum raised by $secondnum is $power
+$first raised by $second is $power
 EOF
-#=========================
