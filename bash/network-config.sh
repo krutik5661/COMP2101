@@ -40,7 +40,7 @@ LAN Hostname    : $(getent hosts "$(ip a s "$(ip a |awk '/: e/{gsub(/:/,"");prin
 External IP     : $(curl -s icanhazip.com)
 External Name   : $(getent hosts "$(curl -s icanhazip.com)" | awk '{print $2}')
 Router Address  : $(ip route show | awk '/default/ {print $3}')
-Router Hostname : $(getnet hosts "$(ip route show | awk '/default/ {print $3}')")
+Router Hostname : $(getent hosts "$(ip route show | awk '/default/ {print $3}')" | awk '{print $2}')
 Network Address : $(ip route get 1.2.3.4 | awk '{print $7}')
 Network Hostname: $(getent hosts "$(ip route get 1.2.3.4 | awk '{print $7}')" | awk '{print $2}')
 EOF

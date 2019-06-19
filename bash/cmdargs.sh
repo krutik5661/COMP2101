@@ -43,8 +43,8 @@ case $1 in
                 ;;
          * )
             shift
-            Debug=$1
-            echo "$debug not a recognized option"
+            notwork=$1
+            echo "$notwork not a recognized option"
             exit
 esac
   # each time through the loop, shift the arguments left
