@@ -12,13 +12,15 @@
 ###############
 # Variables   #
 ###############
-title="Overlord"
+title=("Superman" "Crazy" "GodFather" "Punisherr" "Goodguy" "Unknown" "007")
+title_index=$((RANDOM % ${#title[@]}))
+titles=${title[$title_index]}
 USER="KRUTIK"
 hostname=$(hostname)
 time=$(date +'%H:%M %p on %A')
 
 Welcome=$(cat <<EOF
-Welcome to planet $hostname, "$title $USER!"
+Welcome to planet $hostname, "$titles $USER!"
 
 It is $time
 EOF
